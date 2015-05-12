@@ -1,9 +1,18 @@
+<?php 
+
+	if(isset($__GET["page"])){
+		$page = $__GET["page"];
+	}
+	else{
+		$page = "";
+	}
+?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head> 
     <meta http-equiv="cont-Type" cont="text/html; charset=UTF-8" /> 
-    <title>Data Quarry | <? if ($page != ""){echo ucwords($page);}else {echo "Home";}?></title> 
+    <title>Lewis McMahon | <? if ($page != ""){echo ucwords($page);}else {echo "Home";}?> </title> 
     <link href="css/reset.css" rel="stylesheet" type="text/css" />
     <link href="css/layout.css" rel="stylesheet" type="text/css" />
     <link href="css/style.css" rel="stylesheet" type="text/css" />
