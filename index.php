@@ -12,7 +12,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head> 
     <meta http-equiv="cont-Type" cont="text/html; charset=UTF-8" /> 
-    <title>Lewis McMahon | <? if ($page != ""){echo ucwords($page);}else {echo "Home";}?> </title> 
+    <title>Lewis McMahon | <?php if ($page != ""){echo ucwords($page);}else {echo "Home";}?> </title> 
     <link href="css/reset.css" rel="stylesheet" type="text/css" />
     <link href="css/layout.css" rel="stylesheet" type="text/css" />
     <link href="css/style.css" rel="stylesheet" type="text/css" />
@@ -28,15 +28,15 @@
 <body>
     <div id="wrapper">
         <div id="head">
-            <? include ('inc/static/head.php'); ?> 
+            <?php include ('inc/static/head.php'); ?> 
         </div>
         
         <div id="nav">
-            <? include ('inc/static/nav.php'); ?>
+            <?php include ('inc/static/nav.php'); ?>
         </div>
         
         <div id="cont" >
-        <? 
+        <?php 
             //Gets the cont 
             if ($page == "")
             {
@@ -54,7 +54,7 @@
         </div>
 
         <div id="footer">
-            <? 
+            <?php 
                 include ('inc/static/footer.php'); 
             ?>
         </div> 
