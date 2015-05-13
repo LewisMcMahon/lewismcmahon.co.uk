@@ -24,7 +24,7 @@ class section {
 		$this->position = $sectionRow["position"];
 		
 		//fetch the ids of any entrys that are atached to this section and append them to the $entrys array
-		$entrysQuery = $db->prepare("SELECT entryID FROM sectionToEntry WHERE sectionID == :id");		
+		$entrysQuery = $db->prepare("SELECT entryID FROM sectionToEntry WHERE sectionID == :id ORDER BY position ASC");		
 		$entrysQuery->execute(array(':id' => $sectionID));		
 		$entrysRows = $entrysQuery->fetchAll();
 		
@@ -33,6 +33,27 @@ class section {
 			$this->entrys[] = new entry($entryRow["entryID"]);
 			
 		}
+		
+	}
+	
+	//static function that will return an array containing all the sections as objects orded by their position 
+	static function getAllSectionsOrdered($direction = "ASC"){
+		
+		if ($direction != "ASC" and  $direction != "DESC"){
+			$direction = "ASC";
+		}
+		
+		$db = getConnectedPDOObject ();
+		$sectionQuery = $db->query("SELECT sectionID,name FROM sections ORDER BY position ".$direction);
+		$sectionRows = $sectionQuery->fetchALL();
+		
+		$sections = array();
+		
+		foreach ($sectionRows as $section){
+			$sections[] = new section($section["sectionID"]);
+		}
+		
+		return $sections;
 		
 	}
 	
