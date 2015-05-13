@@ -24,7 +24,7 @@ class section {
 		$this->position = $sectionRow["position"];
 		
 		//fetch the ids of any entrys that are atached to this section and append them to the $entrys array
-		$entrysQuery = $db->prepare("SELECT entryID FROM sectionToEntry WHERE sectionID == :id ORDER BY position ASC");		
+		$entrysQuery = $db->prepare("SELECT entryID FROM sectionToEntry WHERE sectionID == :id");		
 		$entrysQuery->execute(array(':id' => $sectionID));		
 		$entrysRows = $entrysQuery->fetchAll();
 		
