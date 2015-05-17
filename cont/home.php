@@ -14,7 +14,11 @@
 					</div>	
 				
 				</div>
-				<?php foreach($section->getEntrys() as $entry){?>
+				<?php foreach($section->getEntrys() as $entry){
+				
+					$images = $entry->getImages();
+					
+				?>
 					<div class="container_12">	
 						<div class="grid_4">
 							
@@ -24,7 +28,7 @@
 									
 									<?php 
 									
-										if (count ($entry->getImages()) > 0){
+										if (count ($images) > 0){
 											print $entry->gettext();										
 										}
 									
@@ -36,15 +40,15 @@
 								
 						</div>		
 						
-						<?php if (count($entry->getImages()) == 1){?>
+						<?php if (count($images) == 1){?>
 						
 							<div class="grid_8">
-								<a data-lightbox="<?php print $entry->getName(); ?>" href="img/entryImages/<?php print $entry->getImages()[0];?>">
-									<img  src="img/entryImages/<?php print $entry->getImages()[0];?>" />
+								<a data-lightbox="<?php print $entry->getName(); ?>" href="img/entryImages/<?php print $images[0];?>">
+									<img  src="img/entryImages/<?php print $images[0];?>" />
 								</a>
 							</div>
 						
-						<?php }elseif (count($entry->getImages()) == 0){?>
+						<?php }elseif (count($images) == 0){?>
 							
 							<div class="grid_8">
 							
@@ -60,7 +64,7 @@
 							
 							?><div class="grid_8"><?php 
 							
-								$images = $entry->getImages();
+								
 								
 								$i = 0;
 								while (count($images) > $i){?>
