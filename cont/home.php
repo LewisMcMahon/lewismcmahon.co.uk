@@ -1,6 +1,4 @@
 <?php 
-
-	$allSections =  section::getAllSectionsOrdered();
 	
 	foreach($allSections as $section){			
 		?>
