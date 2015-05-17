@@ -120,15 +120,14 @@ a{
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 	margin-bottom:10px;
-}7
+}
 
 .grid_4 img{
 	width: 280px;
 	border-color: #303030;
-	border-width:5px;
+	border-width:10px;
 	border-style:solid;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
-	margin:10px;
-}
+	margin-bottom:10px;

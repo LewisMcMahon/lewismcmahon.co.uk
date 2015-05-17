@@ -2,11 +2,6 @@
 
 	$allSections =  section::getAllSectionsOrdered();
 	
-	print "<pre>";
-	print_r($allSections);
-	print "</pre>";
-
-	
 	foreach($allSections as $section){			
 		?>
 			<div class="container_12 section">
@@ -41,31 +36,65 @@
 								</div>						
 								
 								
-						</div>
+						</div>		
 						
-						<div class="grid_8">
+						<?php if (count($entry->getImages()) == 1){?>
 						
-							<?php 
+							<div class="grid_8">
+								<a data-lightbox="<?php print $entry->getName(); ?>" href="img/entryImages/<?php print $entry->getImages()[0];?>">
+									<img  src="img/entryImages/<?php print $entry->getImages()[0];?>" />
+								</a>
+							</div>
+						
+						<?php }elseif (count($entry->getImages()) == 0){?>
+							
+							<div class="grid_8">
+							
+								<?php 
+										
+									print $entry->getText();
 									
-								if (count ($entry->getImages()) > 0){
-									
-									foreach ($entry->getImages() as $filename){
-										?> 
-											<a data-lightbox="<?php print $entry->getName(); ?>" href="img/<?php print $filename;?>">
-												<img  src="img/<?php print $filename;?>" />
+								?>
+								
+							</div>	
+						
+						<?php }else{
+							
+							?><div class="grid_8"><?php 
+							
+								$images = $entry->getImages();
+								
+								$i = 0;
+								while (count($images) > $i){?>
+								
+										
+										
+										<div class="grid_4 alpha">
+											<a data-lightbox="<?php print $entry->getName(); ?>" href="img/entryImages/<?php print $images[$i];?>">
+												<img  src="img/entryImages/<?php print $images[$i];?>" />
 											</a>
-										<?php 
-									}
+										</div>
 									
-								}
-								else{
-									print $entry->gettext();
-								}
-							
-							
-							?>
-							
-						</div>
+										
+										
+										<?php 
+												
+											if (isset($images[$i+1])){
+												?> 
+													<div class="grid_4 omega">
+														<a data-lightbox="<?php print $entry->getName(); ?>" href="img/entryImages/<?php print $images[$i+1];?>">
+															<img  src="img/entryImages/<?php print $images[$i+1];?>" />
+														</a>
+													</div>
+												<?php 
+											}
+										
+										?>
+										
+								
+								<?php  $i = $i+2; } ?>
+							</div>
+						<?php }?>
 						
 					</div>
 					
