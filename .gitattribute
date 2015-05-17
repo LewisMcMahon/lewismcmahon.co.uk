@@ -1,0 +1,4 @@
+linguist-language=PHP
+lightbox/* linguist-vendored
+jquery.js linguist-vendored=true
+jquery-validate.js linguist-vendored=true
