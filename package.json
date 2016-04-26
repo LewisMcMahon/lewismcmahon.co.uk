@@ -1,0 +1,22 @@
+{
+  "name": "lewismcmahon.co.uk",
+  "version": "3.0.0",
+  "description": "Source Code for lewismcmahon.co.uk",
+  "main": "index.html",
+  "dependencies": {
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LewisMcMahon/lewismcmahon.co.uk.git"
+  },
+  "author": "lewis@lewismcmahon.co.uk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LewisMcMahon/lewismcmahon.co.uk/issues"
+  },
+  "homepage": "https://github.com/LewisMcMahon/lewismcmahon.co.uk#readme"
+}
