@@ -25,6 +25,7 @@ body{
 .work-header-overlay h3{
     color: whitesmoke;
     margin: 0;
+    text-align: center;
 }
 
 .work-content{
@@ -36,5 +37,5 @@ body{
 }
 
 .work-container{
-    margin-bottom:30px;
+    margin:15px 0;
 }

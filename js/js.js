@@ -14,28 +14,29 @@ $( document ).ready(function() {
 	workBoxSizeSet()
 });
 
-$( window ).resize(function() {
+$(window).on('resize', function(){
 	workBoxSizeSet()
 })
 
 
-$(".work-container" ).mouseenter(function () {
+$(".work-container" ).on('mouseenter', function(){
+	$("h3",this).hide()
+	$(".work-content",this).fadeIn()
 	var marginToAdd = ($(".work-container").height() - $(".work-content",this).height()) / 2
 	if (marginToAdd < 0){
 		marginToAdd = 0;
 		$(".work-header",this).height($(".work-content",this).height())
 		$(".work-content",this).css("padding-top","10px")
 		$(".work-content",this).css("padding-bottom","10px")
+		console.log($(".work-content",this).height())
 	}else{
 		$(".work-content",this).css("padding-top",marginToAdd+"px")
 		$(".work-content",this).css("padding-bottom",marginToAdd+"px")
 	}
-	$("h3",this).hide()
-	$(".work-content",this).fadeIn()
 
 })
 
-$(".work-container" ).mouseleave(function () {
+$(".work-container" ).on('mouseleave', function(){
 	$("h3",this).fadeIn()
 	$(".work-content",this).hide()
 	workBoxSizeSet()
