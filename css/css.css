@@ -5,14 +5,20 @@ body{
 .work-header{
     background-size:100%;
 }
-.work-header.development{
+.work-header.php{
+    background-image:url("../images/php.jpg");
+}
+.work-header.python{
+    background-image:url("../images/python.jpg");
+}
+.work-header.javascript{
     background-image:url("../images/code.jpg");
 }
 .work-header.aws{
     background-image:url("../images/servers.jpg");
 }
-.work-header.design{
-    background-image:url("../images/data-quarry.jpg");
+.work-header.dbs{
+    background-image:url("../images/db.jpg");
 }
 .work-header.climbing{
     background-image:url("../images/climbing.jpg");
